@@ -23,6 +23,16 @@ app.use(limite)
 
 
 
+// Mongo DB Connection 
+const URL = "mongodb://127.0.0.1:27017/coiner"
+const OPTION = { user: "", pass: "" }
+mongoose.connect(URL, OPTION, (error) => {
+    console.log("Db Connection Success Full ")
+    console.log(error)
+})
+
+
+
 
 
 module.exports = app
