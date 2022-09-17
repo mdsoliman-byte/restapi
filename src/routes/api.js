@@ -4,7 +4,7 @@ const router = express.Router()
 
 
 
-router.get("/hello", productController.InsertData)
+router.post("/InsertData", productController.InsertData)
 
 
 

@@ -5,5 +5,5 @@ const DataSchima = mongoose.Schema({
     Class: String,
     Remark: String
 })
-const productModel = mongoose.model("Product", DataSchima);
+const productModel = mongoose.model("products", DataSchima);
 module.exports = productModel;

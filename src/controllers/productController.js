@@ -1,4 +1,7 @@
 const productModel = require("../models/productsModel")
+// CRUD
+
+// Create Student 
 exports.InsertData = (req, res) => {
     const reqBody = req.body;
     productModel.create(reqBody, (err, data) => {
@@ -7,8 +10,6 @@ exports.InsertData = (req, res) => {
         } else {
             res.status(201).json({ status: "Success ", data: data })
         }
-
     })
-
-
 }
+// Read Student
