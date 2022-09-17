@@ -27,10 +27,23 @@ exports.ReadProduct = (req, res) => {
 
 // Update  Student
 exports.UpdateProduct = (req, res) => {
-    const id = req.params.ids;
+    const id = req.params.id;
     const Qurey = { _id: id };
     const reqBody = req.body;
     productModel.updateOne(Qurey, reqBody, (err, data) => {
+        if (err) {
+            res.status(404).json({ status: "Fail", data: err })
+        } else {
+            res.status(200).json({ status: "Success Update ", data: data })
+        }
+    })
+}
+
+// Delete Product 
+exports.DeleteProduct = (req, res) => {
+    const id = req.params.id;
+    const Query = { _id: id }
+    productModel.remove(Query, (err, data) => {
         if (err) {
             res.status(404).json({ status: "Fail", data: err })
         } else {
