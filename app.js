@@ -14,9 +14,12 @@ app.use(hpp())
 app.use(helmet())
 app.use(rateLimit())
 app.use(mongoSanitize())
+const limite = rateLimit({
+    windowMs: 15 * 60 * 1000,
+    max: 100
+})
 
-
-
+app.use(limite)
 
 
 
