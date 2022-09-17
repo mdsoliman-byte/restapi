@@ -5,6 +5,7 @@ const router = express.Router()
 
 
 router.post("/InsertData", productController.InsertData)
+router.get("/ReadProduct", productController.ReadProduct)
 
 
 
