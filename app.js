@@ -8,6 +8,7 @@ const mongoSanitize = require("express-mongo-sanitize");
 const hpp = require("hpp")
 const cors = require("cors")
 const mongoose = require("mongoose")
+const bodyParser = require("body-parser")
 // Security Middleware Implement 
 app.use(cors())
 app.use(hpp())
@@ -18,7 +19,8 @@ const limite = rateLimit({
     windowMs: 15 * 60 * 1000,
     max: 100
 })
-
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(limite)
 
 
