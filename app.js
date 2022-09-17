@@ -8,7 +8,8 @@ const mongoSanitize = require("express-mongo-sanitize");
 const hpp = require("hpp")
 const cors = require("cors")
 const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
+const router = require("./src/routes/api");
 // Security Middleware Implement 
 app.use(cors())
 app.use(hpp())
@@ -35,7 +36,7 @@ mongoose.connect(URL, OPTION, (error) => {
 
 
 
-
+app.use("/api/v1",router)
 
 module.exports = app
 

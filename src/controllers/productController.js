@@ -1,6 +1,5 @@
 const productModel = require("../models/productsModel")
-
-const InsertData = (req, res) => {
+exports.InsertData = (req, res) => {
     const reqBody = req.body;
     productModel.create(reqBody, (err, data) => {
         if (err) {
@@ -13,6 +12,3 @@ const InsertData = (req, res) => {
 
 
 }
-
-
-module.exports = InsertData
