@@ -8,6 +8,12 @@ const mongoSanitize = require("express-mongo-sanitize");
 const hpp = require("hpp")
 const cors = require("cors")
 const mongoose = require("mongoose")
+// Security Middleware Implement 
+app.use(cors())
+app.use(hpp())
+app.use(helmet())
+app.use(rateLimit())
+app.use(mongoSanitize())
 
 
 
