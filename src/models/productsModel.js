@@ -11,9 +11,12 @@ const DataSchima = mongoose.Schema({
                     return false
                 }
             },
-            message: "11 Digit Mobile Number Required"
+            message: "11 digit Mobile Number Is Required"
+
+
         }
     },
+
     Roll: {
         type: Number,
         // min: [6, `minum value 6 , maximum value 12, your value is {VALUE}`],
